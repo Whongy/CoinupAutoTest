@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="用户管理系统测试套件">
+    <test name="测试用例">
+        <classes>
+
+            <class name="com.course.cases.GetHistotyListTest">
+                <methods>
+                    <include name="getHistoryList"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.OrderCreateTest">
+                <methods>
+                    <include name="orderCreate"/>
+                </methods>
+            </class>
+
+        </classes>
+        <listeners>
+            <listener class-name="com.course.config.ExtentTestNGReporterListener"/>
+        </listeners>
+    </test>
+</suite>

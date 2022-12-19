@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.model">
+    <!--查询用户历史订单-->
+    <select id="historyCase" parameterType="Integer" resultType="com.course.model.HistoryOrderListCase">
+        select * from historyCase where contractId=#{contractId}
+    </select>
+    <!--开仓ETC 市价 -->
+    <select id="orderCase" parameterType="Integer" resultType="com.course.model.OrderCreateCase">
+        select * from orderCase where contractId=#{contractId}
+
+    </select>
+<!-- and positionType=#{positionType}
+        and side=#{side}
+        and leverageLevel=#{leverageLevel}
+        and price=#{price}
+        and volume={volume};-->
+</mapper>
