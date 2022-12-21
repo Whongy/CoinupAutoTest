@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 
 public class OrderCreateTest {
-    @Test(dependsOnGroups = "getHistoryList",threadPoolSize = 6,invocationCount = 6)
+    @Test(dependsOnGroups = "getHistoryList",threadPoolSize = 6,invocationCount = 6,enabled=false)
     public void orderCreate() throws IOException {
         SqlSession session = DatabaseUtil.getSqlSession();
         OrderCreateCase orderCreateCase = session.selectOne("orderCase",11);
@@ -59,7 +59,7 @@ public class OrderCreateTest {
         // set header info
 
         post.setHeader("content-type","application/json");
-        post.setHeader("exchange-token", "c6ce889f2fdef6e5a69a854d70dfe19f5a8a2222649541f8bec8ea90d279f017");
+        post.setHeader("exchange-token", "6ce054e1d64dbe61c36a11d85f3ee1af3ed8499ce7314b7d90a42736a10d5f64");
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
 

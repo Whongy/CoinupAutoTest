@@ -64,10 +64,10 @@ public class GetHistotyListTest {
         Object document2 = Configuration.defaultConfiguration().jsonProvider().parse(code1.toString());
         String code =JsonPath.read(document2,"$.code");
 
-          List<Object> arr2 = JsonPath.read(document2,"$.data.orderList[*].['symbol','pricePrecision','side','positionType','tradeFee','volume','realizedAmount']");
+          //List<Object> arr2 = JsonPath.read(document2,"$.data.orderList[*].['symbol','pricePrecision','side','positionType','tradeFee','volume','realizedAmount']");
 
-        System.out.println("code: "+code );
-        System.out.println("orderDetal:"+arr2.toString());
+//        System.out.println("code: "+code );
+//        System.out.println("orderDetal:"+arr2.toString());
 
 
         Object actualValue = historyOrderListCase.getExpected();
@@ -83,7 +83,7 @@ public class GetHistotyListTest {
         param.put("contractId",historyOrderListCase.getContractId());
 
         post.setHeader("content-type","application/json");
-        post.setHeader("exchange-token", "c6ce889f2fdef6e5a69a854d70dfe19f5a8a2222649541f8bec8ea90d279f017");
+        post.setHeader("exchange-token", "6ce054e1d64dbe61c36a11d85f3ee1af3ed8499ce7314b7d90a42736a10d5f64");
 
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
